@@ -1,0 +1,182 @@
+\documentclass[nobib]{tufte-book}
+
+\newcommand\shaded[2][]{%
+  \setbox0=\hbox{{\special{pdf:literal 7 Tr }#2}}%
+  \tikz[baseline=0]\path [#1] \pgfextra{\rlap{\copy0}} (0,-\dp0) rectangle (\wd0,\ht0);%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand{\maketitlepage}{%
+\begingroup%
+\setlength{\parindent}{0pt}
+
+{\fontsize{20}{20}\selectfont{\@author}\par}
+
+%\vspace{1.75in}{\fontsize{36}{54}\selectfont I KNOW ANOTHER ONE}\par 
+\vspace{1.75in}{\fontsize{36}{54}\selectfont\shaded[left color=red, right color=red, middle color=orange, shading angle=170]{I KNOW ANOTHER ONE}}\par
+%\vspace{1.75in}{\fontsize{36}{54}\selectfont\shaded[left color=black, right color=blue, middle color=magenta, shading angle=170]{I KNOW} \shaded[left color=blue, right color=blue, middle color=cyan, shading angle=90]{ANOTH}\shaded[left color=blue, right color=black, middle color=magenta, shading angle=10]{ER ONE}}\par
+%\vspace{1.75in}{\fontsize{36}{54}\selectfont\shaded[left color=red, right color=green, middle color=yellow, shading angle=10]{I KNOW} \shaded[left color=green, right color=blue, middle color=cyan, shading angle=10]{ANOTH}\shaded[left color=blue, right color=black, middle color=magenta, shading angle=10]{ER ONE}}\par
+
+\vfill{\fontsize{12}{12}\selectfont\textit{\@publisher}\par}
+\thispagestyle{empty}
+\endgroup
+}
+\makeatother
+% https://www.ctan.org/pkg/titlepages for more titles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{tikz}
+\newbox\textpicturebox
+\tikzset{text picture/.style={%
+  path picture={%
+   \pgfmathsetlengthmacro\textpicturewidth{\wd\textpicturebox}%
+   \pgfmathsetlengthmacro\textpictureheight{\ht\textpicturebox+\dp\textpicturebox}%
+   \pgftransformshift{\pgfpointanchor{path picture bounding box}{center}}%
+   #1}}}%
+\newcommand\shadetext[2][]{%
+  \setbox\textpicturebox=\hbox{{\special{pdf:literal 7 Tr }#2}}%
+  \tikz[baseline=0]\path \pgfextra{\rlap{\copy\textpicturebox}} [#1] (0,-\dp\textpicturebox) rectangle (\wd\textpicturebox,\ht\textpicturebox);
+}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
+
+%%%%
+%\usepackage{sourceserifpro}
+\usepackage{lineno}
+\modulolinenumbers[4]
+\setlength\linenumbersep{4pt}
+%%%%
+
+\usepackage[LAE,T1]{fontenc}
+\TeXXeTstate=1
+\usepackage{graphicx}
+
+\usepackage{cjhebrew}
+%http://www.bakoma-tex.com/doc/fonts/cjhebrew/manual.pdf
+
+\usepackage{silence}
+%http://www.bakoma-tex.com/doc/latex/silence/silence-doc.pdf
+
+\WarningFilter{latex}{Marginpar on page}
+\usepackage{scalerel,xparse}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{polyglossia}
+%\setmainlanguage[variant=british]{english}
+%\setotherlanguage{hebrew}
+%\newfontfamily\hebrewfont{Noto Sans Hebrew}[Script=Hebrew]
+%\setotherlanguage{russian}
+%\setotherlanguage{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xifthen}
+% ifpdf*
+% ifxetex*
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{ragged2e}
+\usepackage{changepage}
+\usepackage{paralist}
+\usepackage{textcase}
+% soul*
+% letterspace*
+\usepackage{ulem}
+\usepackage{censor}
+\usepackage{cancel}
+\usepackage{setspace}
+\usepackage{natbib}
+\usepackage{bibentry}
+\usepackage{optparams}
+\usepackage{placeins}
+% mathpazo*
+% helvet*
+% fontenc*
+% beramono*
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{multicol}
+%\usepackage[fulladjust]{marginnote}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%fancyhead[LE]{\thepage\quad\leftmark}}}%chapter
+%\fancyhead[LE]{\thepage~$\mid$~\textsc{I KNOW ANOTHER ONE}}
+%\fancyhead[RO]{\textsc{I KNOW ANOTHER ONE}~$\mid$~\thepage}
+\usepackage{lastpage}
+\fancyhead[LE]{Page \thepage/\pageref{LastPage} \qquad \smallcaps{\newlinetospace{I KNOW ANOTHER ONE}}}
+\fancyhead[RO]{\smallcaps{\newlinetospace{I KNOW ANOTHER ONE}} \qquad Page \thepage/\pageref{LastPage}}
+
+\addtolength{\oddsidemargin}{-0.79in}
+\addtolength{\evensidemargin}{-0.29in}
+\addtolength{\textwidth}{1in}
+
+\newenvironment{loggentry}[2]% date, heading
+{\noindent\textbf{#2}\marginnote{#1}\par}{\vspace{3cm}}
+
+\def\?#1{}
+
+\usepackage{moresize}
+
+\newcommand{\writetitle}{0}
+
+\newcommand{\mytitle}[1]
+{   \ifthenelse{\writetitle=1}{#1}{}
+}
+
+\usepackage{rotating}
+
+\newread\mysource
+
+\newcommand\blfootnote[1]{\begingroup\renewcommand\thefootnote{}\footnote{#1}\addtocounter{footnote}{-1}\endgroup}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfdefinestyle{MDSMSLEFT}{%
+    linecolor=gray,
+    outerlinewidth=1pt,
+    roundcorner=9pt,
+    %innertopmargin=\baselineskip,
+    %innerbottommargin=\baselineskip,
+    innerrightmargin=5pt,
+    innerleftmargin=5pt,
+    backgroundcolor=gray}
+
+\newcommand{\smsleft}[1]{
+    \begin{minipage}{0.5\linewidth}
+        \begin{mdframed}[style=MDSMSLEFT] \textcolor{white}{#1} \end{mdframed}
+    \vspace*{0.3em}
+    \end{minipage}\par
+}
+
+\mdfdefinestyle{MDSMSRIGHT}{%
+    linecolor=green,
+    outerlinewidth=1pt,
+    roundcorner=9pt,
+    %innertopmargin=\baselineskip,
+    %innerbottommargin=\baselineskip,
+    innerrightmargin=5pt,
+    innerleftmargin=5pt,
+    backgroundcolor=green!50!white}
+
+\newcommand{\smsright}[1]{ \hspace{0.3\linewidth}
+    \begin{minipage}{0.5\linewidth}
+        \begin{mdframed}[style=MDSMSRIGHT] #1 \end{mdframed}
+    \vspace*{0.3em}
+    \end{minipage}\par
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage[printwatermark]{xwatermark}
+%\newwatermark[pages=2-351,color=red!25,angle=45,scale=2,xpos=-5,ypos=0]{PRIVATE AND CONFIDENTIAL}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\vspaced}[0]{\vspace{10.5em}}
+\newcommand{\hspaced}[0]{\hspace{6.5em}}
+
+% Inserts a blank page
+\newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}

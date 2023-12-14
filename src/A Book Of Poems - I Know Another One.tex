@@ -1,0 +1,95 @@
+\input{Preamble}
+
+\begin{document}
+
+
+\title{I KNOW ANOTHER ONE}
+\author[PENGK SYLVESTER]{P.~S.}
+\publisher{OR: A Book Of Poems}
+\maketitle
+
+
+% take the file
+
+% C:\Users\pengk\IdeaProjects\A Book Of Poems.tex - I Know Another One\out
+% to;
+
+% https://www.ilovepdf.com/split_pdf#split,extract
+% extract all except the title page, then
+
+% https://online2pdf.com/multiple-pages-per-sheet#
+% to print 2 sheets per page, then
+
+% https://www.ilovepdf.com/merge_pdf
+% to merge the cover page with the book
+
+%\vspace{0.4cm} \textcolor{gray}{\rule[2.5mm]{4in}{0.4pt}}
+
+%http://unicode.org/emoji/charts/full-emoji-list.html
+%\scaleto[3.5mm]{\includegraphics[viewport=0 60 200 260]{emoji_collection/u.png}}{3.5mm} %\textcolor{white}{.}
+
+    \pgfmathtruncatemacro{\StartYear}{2022}
+    \pgfmathtruncatemacro{\EndYear}{2025}
+
+    \input{Copyright}
+    \input{Introduction}
+
+    \newcounter{daynumber}
+    \newcounter{excluded}
+    \newcounter{proverbs}
+
+
+% For An Ascending Order
+
+    \setcounter{daynumber}{1}
+    \setcounter{excluded}{1}
+    \setcounter{proverbs}{1}
+
+    \foreach \Year in {\StartYear,...,\EndYear}
+        {   \foreach \Month in {Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec}
+        {   \foreach \Day in {1,...,31}
+        {   \IfFileExists{\Year_\Month_\Day}
+    {   \openin\mysource=\Year_\Month_\Day.tex
+    \read\mysource to \firstline
+    \closein\mysource
+    \xdef\writetitle{1}
+        \begin{loggentry}{\Year - \Month - \Day}{\firstline}
+            \xdef\writetitle{0}
+            \resetlinenumber[1]
+            \obeylines
+            \input{\Year_\Month_\Day}
+            \stepcounter{daynumber}
+        \end{loggentry}
+    }
+    }
+    }
+    }
+
+% For A Descending Order
+
+%\setcounter{daynumber}{1001}
+
+%\foreach \Year in {\EndYear,...,\StartYear}
+%{   \foreach \Month in {Dec,Nov,Oct,Sep,Aug,Jul,Jun,May,Apr,Mar,Feb,Jan}
+%    {   \foreach \Day in {31,...,1}
+%        {   \IfFileExists{\Year_\Month_\Day}
+%                {   \openin\mysource=\Year_\Month_\Day.tex
+%                    \read\mysource to \firstline
+%                    \closein\mysource
+%                    \xdef\writetitle{1}
+%                    \begin{loggentry}{\Year - \Month - \Day}{\firstline}
+%                        \xdef\writetitle{0}
+%                        \resetlinenumber[1]
+%                        \bgroup\obeylines
+%                        \input{\Year_\Month_\Day}
+%                        \addtocounter{daynumber}{-1}
+%                    \end{loggentry}
+%        }
+%        }
+%    }
+%}
+
+
+    \input{Notes}
+
+\end{document}
