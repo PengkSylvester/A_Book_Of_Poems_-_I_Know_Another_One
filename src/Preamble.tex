@@ -11,15 +11,17 @@
 \begingroup%
 \setlength{\parindent}{0pt}
 
-{\fontsize{20}{20}\selectfont{\@author}\par}
+%\vspace{\fontsize{45.5pt}{50pt}\selectfont I KNOW ANOTHER ONE}\par
+%\vspace{1.75in}{\fontsize{45.5pt}{50pt}\selectfont I\\ KNOW\\ ANOTHER\\ ONE\\}\par
+%\vspace{1.75in}{\fontsize{45.5pt}{50pt}\selectfont\shaded[left color=red, right color=red, middle color=orange, shading angle=170]{I KNOW ANOTHER ONE}}\par
+%\vspace{\fontsize{45.5pt}{50pt}\selectfont\shaded[left color=black, right color=blue, middle color=magenta, shading angle=170]{I KNOW} \shaded[left color=blue, right color=blue, middle color=cyan, shading angle=90]{ANOTH}\shaded[left color=blue, right color=black, middle color=magenta, shading angle=10]{ER ONE}}\par
+{\fontsize{45.5pt}{50pt}\selectfont\shaded[left color=red, right color=green, middle color=yellow, shading angle=10]{I KNOW} \shaded[left color=green, right color=blue, middle color=cyan, shading angle=10]{ANOTH}\shaded[left color=blue, right color=black, middle color=magenta, shading angle=10]{ER ONE}}\par
 
-%\vspace{1.75in}{\fontsize{36}{54}\selectfont I KNOW ANOTHER ONE}\par 
-\vspace{1.75in}{\fontsize{36}{54}\selectfont I\\ KNOW\\ ANOTHER\\ ONE\\}\par
-%\vspace{1.75in}{\fontsize{36}{54}\selectfont\shaded[left color=red, right color=red, middle color=orange, shading angle=170]{I KNOW ANOTHER ONE}}\par
-%\vspace{1.75in}{\fontsize{36}{54}\selectfont\shaded[left color=black, right color=blue, middle color=magenta, shading angle=170]{I KNOW} \shaded[left color=blue, right color=blue, middle color=cyan, shading angle=90]{ANOTH}\shaded[left color=blue, right color=black, middle color=magenta, shading angle=10]{ER ONE}}\par
-%\vspace{1.75in}{\fontsize{36}{54}\selectfont\shaded[left color=red, right color=green, middle color=yellow, shading angle=10]{I KNOW} \shaded[left color=green, right color=blue, middle color=cyan, shading angle=10]{ANOTH}\shaded[left color=blue, right color=black, middle color=magenta, shading angle=10]{ER ONE}}\par
+\vspace{4.75in}
+{\fontsize{20}{24}\selectfont{\@author}\par}
 
-\vfill{\fontsize{12}{12}\selectfont\textit{\@publisher}\par}
+\vfill
+{\fontsize{12pt}{15pt}\selectfont\textit{\@publisher}\par}
 \thispagestyle{empty}
 \endgroup
 }
@@ -54,6 +56,8 @@
 \usepackage[LAE,T1]{fontenc}
 \TeXXeTstate=1
 \usepackage{graphicx}
+
+\usepackage{comment}
 
 \usepackage{cjhebrew}
 %http://www.bakoma-tex.com/doc/fonts/cjhebrew/manual.pdf
@@ -178,6 +182,7 @@
 
 \newcommand{\vspaced}[0]{\vspace{10.5em}}
 \newcommand{\hspaced}[0]{\hspace{6.5em}}
+
 
 % Inserts a blank page
 \newcommand{\blankpage}{\newpage\hbox{}\thispagestyle{empty}\newpage}
