@@ -40,9 +40,13 @@
 %http://unicode.org/emoji/charts/full-emoji-list.html
 %\scaleto[3.5mm]{\includegraphics[viewport=0 60 200 260]{emoji_collection/u.png}}{3.5mm} %\textcolor{white}{.}
 
-    \pgfmathtruncatemacro{\StartYear}{2022}
-    \pgfmathtruncatemacro{\EndYear}{2025}
-    \newcommand{\death}[0]{1200}
+%   \pgfmathtruncatemacro{\StartYear}{2022}   \pgfmathtruncatemacro{\EndYear}{2022}   \newcommand{\life}[0]{1}   \newcommand{\death}[0]{104}
+%   \pgfmathtruncatemacro{\StartYear}{2023}   \pgfmathtruncatemacro{\EndYear}{2023}   \newcommand{\life}[0]{105}   \newcommand{\death}[0]{469}
+%   \pgfmathtruncatemacro{\StartYear}{2024}   \pgfmathtruncatemacro{\EndYear}{2024}   \newcommand{\life}[0]{470}   \newcommand{\death}[0]{835}
+   \pgfmathtruncatemacro{\StartYear}{2025}   \pgfmathtruncatemacro{\EndYear}{2025}   \newcommand{\life}[0]{836}   \newcommand{\death}[0]{1200}
+%   \pgfmathtruncatemacro{\StartYear}{2026}   \pgfmathtruncatemacro{\EndYear}{2026}   \newcommand{\life}[0]{1201}   \newcommand{\death}[0]{1565}
+
+%   \pgfmathtruncatemacro{\StartYear}{2022}   \pgfmathtruncatemacro{\EndYear}{2026}   \newcommand{\life}[0]{1}   \newcommand{\death}[0]{1565}
 
     \input{Copyright}
     \input{Introduction}
@@ -54,7 +58,7 @@
 
 % For An Ascending Order
 
-    \setcounter{daynumber}{1}
+    \setcounter{daynumber}{\life}
     \setcounter{excluded}{1}
     \setcounter{proverbs}{1}
 
