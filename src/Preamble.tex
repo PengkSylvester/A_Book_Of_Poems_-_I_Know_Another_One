@@ -104,7 +104,6 @@
 % beramono*
 \usepackage{fancyhdr}
 \usepackage{xcolor}
-\usepackage{textcomp}
 \usepackage{titlesec}
 \usepackage{titletoc}
 \usepackage{multicol}
@@ -119,8 +118,10 @@
 %\fancyhead[LE]{\thepage~$\mid$~\textsc{I KNOW ANOTHER ONE}}
 %\fancyhead[RO]{\textsc{I KNOW ANOTHER ONE}~$\mid$~\thepage}
 \usepackage{lastpage}
-\fancyhead[LE]{Page \thepage/\pageref{LastPage} \qquad \smallcaps{\newlinetospace{I KNOW ANOTHER ONE}}}
-\fancyhead[RO]{\smallcaps{\newlinetospace{I KNOW ANOTHER ONE}} \qquad Page \thepage/\pageref{LastPage}}
+\fancyhead[LE]{\smallcaps{\newlinetospace{I KNOW ANOTHER ONE}}}
+\fancyfoot[C]{Page \thepage/\pageref{LastPage}}
+\fancyhead[RO]{\smallcaps{\newlinetospace{PENGK SYLVESTER}}}
+%\fancyfoot[RO]{Page \thepage/\pageref{LastPage}}
 
 \addtolength{\oddsidemargin}{-0.79in}
 \addtolength{\evensidemargin}{-0.29in}
