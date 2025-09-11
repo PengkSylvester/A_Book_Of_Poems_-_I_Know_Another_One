@@ -55,14 +55,14 @@
     \setcounter{proverbs}{1}
 
     \foreach \Year in {\StartYear,...,\EndYear}
-        {   \foreach \Month in {Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec}
-        {   \foreach \Day in {1,...,31}
+        {   \foreach \Month in {01,02,03,04,05,06,07,08,09,...,12}
+        {   \foreach \Day in {01,02,03,04,05,06,07,08,09,...,31}
         {   \IfFileExists{\Year_\Month_\Day}
     {   \openin\mysource=\Year_\Month_\Day.tex
     \read\mysource to \firstline
     \closein\mysource
     \xdef\writetitle{1}
-        \begin{loggentry}{\Year - \Month - \Day}{\firstline}
+        \begin{loggentry}{\textbf{\DTMdate{\Year-\Month-\Day}}}{\firstline}
             \xdef\writetitle{0}
             \resetlinenumber[1]
             \obeylines
