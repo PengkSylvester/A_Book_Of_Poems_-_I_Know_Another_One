@@ -56,10 +56,10 @@
     \setcounter{proverbs}{1}
 
     \foreach \Year in {\StartYear,...,\EndYear}
-        %{   \foreach \Month in {01,02,03,04,05,06,07,08,09,...,12}
-        %{   \foreach \Day in {01,02,03,04,05,06,07,08,09,...,31}
-        {   \foreach \Month in {09,...,12}
-        {   \foreach \Day in {01,02,03,04,05,06,07,08,09,...,31}
+%{\foreach \Month in {01,02,03,04,05,06,07,08,09,...,12}
+%{\foreach \Day in {01,02,03,04,05,06,07,08,09,...,31}
+{\foreach \Month in {10,...,12}
+{\foreach \Day in {01,02,03,04,05,06,07,08,09,...,31}
         {   \IfFileExists{\Year_\Month_\Day}
     {   \openin\mysource=\Year_\Month_\Day.tex
     \read\mysource to \firstline
