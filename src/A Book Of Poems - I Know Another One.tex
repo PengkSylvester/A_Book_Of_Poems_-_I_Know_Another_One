@@ -22,7 +22,9 @@
 
 % Windows CMD
 % cd C:\Users\pengk\IdeaProjects\A_Book_Of_Poems_-_I_Know_Another_One\out
-% convert main to PS
+% del "PS.pdf"
+% gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -dFirstPage=3 -dLastPage=5 -sOUTPUTFILE=input.3_5.pdf input.pdf
+% copy "A Book Of Poems - I Know Another One.pdf" "PS.pdf"
 % pdftoppm -png -progress -r 600 PS.pdf Book_Page
 % ctrl+c to end the program
 
@@ -38,7 +40,7 @@
 %   \pgfmathtruncatemacro{\StartYear}{2024}   \pgfmathtruncatemacro{\EndYear}{2024}   \newcommand{\life}[0]{470}   \newcommand{\death}[0]{835}
 %   \pgfmathtruncatemacro{\StartYear}{2025}   \pgfmathtruncatemacro{\EndYear}{2025}   \newcommand{\life}[0]{836}   \newcommand{\death}[0]{1200}
 %   \pgfmathtruncatemacro{\StartYear}{2026}   \pgfmathtruncatemacro{\EndYear}{2026}   \newcommand{\life}[0]{1201}   \newcommand{\death}[0]{1565}
-   \pgfmathtruncatemacro{\StartYear}{2026}   \pgfmathtruncatemacro{\EndYear}{2026}   \newcommand{\life}[0]{1321}   \newcommand{\death}[0]{1565}
+   \pgfmathtruncatemacro{\StartYear}{2026}   \pgfmathtruncatemacro{\EndYear}{2026}   \newcommand{\life}[0]{1352}   \newcommand{\death}[0]{1565}
 %   \pgfmathtruncatemacro{\StartYear}{2027}   \pgfmathtruncatemacro{\EndYear}{2027}   \newcommand{\life}[0]{1566}   \newcommand{\death}[0]{1930}
 %   \pgfmathtruncatemacro{\StartYear}{2028}   \pgfmathtruncatemacro{\EndYear}{2028}   \newcommand{\life}[0]{1931}   \newcommand{\death}[0]{2296}
 %   \pgfmathtruncatemacro{\StartYear}{2029}   \pgfmathtruncatemacro{\EndYear}{2029}   \newcommand{\life}[0]{2297}   \newcommand{\death}[0]{2661}
@@ -65,7 +67,7 @@
     \foreach \Year in {\StartYear,...,\EndYear}
 %{   \foreach \Month in {01,02,03,04,05,06,07,08,09,...,12}
 %{   \foreach \Day in {01,02,03,04,05,06,07,08,09,...,31}
-    {   \foreach \Month in {05,06,07,08,09,...,10,11,12}
+    {   \foreach \Month in {06,07,08,09,...,10,11,12}
     {   \foreach \Day in {01,02,03,04,05,06,07,08,09,...,31}
         {   \IfFileExists{\Year_\Month_\Day}
     {   \openin\mysource=\Year_\Month_\Day.tex
