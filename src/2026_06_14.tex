@@ -1,41 +1,7 @@
 \mytitle{\thedaynumber/\death}
 \hypertarget{\the\value{daynumber}}
 
-\marginnote[1mm]{\textit{TBD \theproverbs}} \stepcounter{proverbs} %\marginnote[1mm]{\textit{?}}
+\marginnote[1mm]{\textit{\HUGE TBD \theproverbs}} \stepcounter{proverbs} %\marginnote[1mm]{\textit{}}
 
-\shadetext[fill=black, text picture={
-    \tikzset{shift=(90:2)}
-    \fill [green!75!brown] (-0.35,0) rectangle (0.35,-7);
-    \fill [green!75!brown] (0,-7) [rotate=-45]  arc (270:-90:0.5 and 2);
-    \fill [green!75!brown] (0,-7) [rotate=45]  arc (270:-90:0.5 and 2);
-    \foreach \i [evaluate={\o=mod(\i/30,2)*100;}] in {0,30,...,330}
-    \fill [red!\o!pink]
-    (0,0) -- (\i:3) .. controls ++(\i:1cm) and ++(\i+30:1) .. (\i+30:3) -- cycle;
-    \fill [yellow] circle [radius=1.5];
-}]{\begin{minipage}[t]{2.85in}
 
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-       bow chicka wow wow, bow chicka wow wow
-\end{minipage}}
+{\HUGE \theexcluded\ Drafts} \stepcounter{excluded}
