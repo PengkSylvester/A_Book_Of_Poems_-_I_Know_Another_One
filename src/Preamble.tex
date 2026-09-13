@@ -113,6 +113,17 @@
 \usepackage[en-GB,showdow]{datetime2}
 \DTMlangsetup[en-GB]{abbr,ord=raise,monthyearsep={,\space}}
 
+\geometry{
+    a4paper,          % Or letterpaper depending on your standard
+    landscape,
+    left=24.8mm,
+    top=27.4mm,
+    textwidth=190mm,
+    marginparsep=15.2mm,
+    marginparwidth=46.4mm,
+    textheight=34\baselineskip,
+    headheight=\baselineskip,
+    headsep=2\baselineskip}
 
 %\usepackage[fulladjust]{marginnote}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -121,9 +132,28 @@
 %\fancyhead[LE]{\thepage~$\mid$~\textsc{I KNOW ANOTHER ONE}}
 %\fancyhead[RO]{\textsc{I KNOW ANOTHER ONE}~$\mid$~\thepage}
 \usepackage{lastpage}
-\fancyhead[LE]{\smallcaps{\newlinetospace{I KNOW ANOTHER ONE}}}
-\fancyfoot[C]{Page \thepage/\pageref{LastPage}}
-\fancyhead[RO]{\smallcaps{\newlinetospace{PENGK SYLVESTER}}}
+
+% --- Define Style A ---
+\fancypagestyle{Hiba}{
+    \fancyhead[LE]{\smallcaps{\newlinetospace{HIBA'S}}}
+    \fancyfoot[C]{Page \thepage/\pageref{LastPage}}
+    \fancyhead[RO]{\smallcaps{\newlinetospace{PENGK SYLVESTER}}}
+}
+
+% --- Define Style B ---
+\fancypagestyle{Marv}{
+    \fancyhead[LE]{\smallcaps{\newlinetospace{MARVELENE'S}}}
+    \fancyfoot[C]{Page \thepage/\pageref{LastPage}}
+    \fancyhead[RO]{\smallcaps{\newlinetospace{PENGK SYLVESTER}}}
+}
+
+% --- Define Style C ---
+\fancypagestyle{Eme}{
+    \fancyhead[LE]{\smallcaps{\newlinetospace{EME'S}}}
+    \fancyfoot[C]{Page \thepage/\pageref{LastPage}}
+    \fancyhead[RO]{\smallcaps{\newlinetospace{PENGK SYLVESTER}}}
+}
+
 %\fancyfoot[RO]{Page \thepage/\pageref{LastPage}}
 
 \addtolength{\oddsidemargin}{-0.79in}
