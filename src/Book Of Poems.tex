@@ -38,8 +38,9 @@
 %   \pgfmathtruncatemacro{\StartYear}{203}   \pgfmathtruncatemacro{\EndYear}{203}   \newcommand{\life}[0]{}   \newcommand{\death}[0]{}
 
 
-   \pgfmathtruncatemacro{\StartYear}{2023}
-    \pgfmathtruncatemacro{\EndYear}{2023}
+   \pgfmathtruncatemacro{\StartYear}{2022}
+    \pgfmathtruncatemacro{\EndYear}{2026}
+    \newcommand{\life}[0]{1}   \newcommand{\death}[0]{120}
 
     \input{Appreciation}
     \input{Introduction}
@@ -50,7 +51,6 @@
 
 
 % For Hiba
-    \newcommand{\life}[0]{1}   \newcommand{\death}[0]{605}
     \setcounter{daynumber}{\life}
     \setcounter{excluded}{1}
     \setcounter{proverbs}{1}
@@ -96,7 +96,7 @@
         \stepcounter{daynumber}
         \newpage
     \end{loggentry}
-}   }   }   }
+}}}}
 
 
 
@@ -124,14 +124,7 @@
         \stepcounter{daynumber}
         \newpage
     \end{loggentry}
-}   }   }   }
-
-
-
-
-
-
-
+}}}}
 
 
     \input{Notes}
